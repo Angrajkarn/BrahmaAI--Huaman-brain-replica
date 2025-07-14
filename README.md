@@ -12,7 +12,7 @@
   </p>
 
   <p align="center">
-    <a href="https://brahmaai.netlify.app/" target="_blank"><img src="https://img.shields.io/badge/View_Live-Demo-brightgreen?style=for-the-badge" alt="live demo" /></a>
+    <a href="https://brahmaio.netlify.app/" target="_blank"><img src="https://img.shields.io/badge/View_Live-Demo-brightgreen?style=for-the-badge" alt="live demo" /></a>
     <a href="#"><img src="https://img.shields.io/github/license/firebase/genkit?style=for-the-badge" alt="license" /></a>
     <a href="#"><img src="https://img.shields.io/github/stars/firebase/genkit?style=for-the-badge" alt="stars" /></a>
     <a href="#"><img src="https://img.shields.io/github/forks/firebase/genkit?style=for-the-badge" alt="forks" /></a>
