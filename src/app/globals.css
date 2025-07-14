@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 224 71% 4%; /* #020617 - A deeper indigo/black */
+    --foreground: 210 40% 98%;
+
+    --card: 224 42% 16%; /* #1e293b - Kept for consistency elsewhere */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    /* New colors from the prompt */
+    --primary: 243 73% 58%; /* #4f46e5 - Deep Indigo/Violet */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 226 43% 31%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+
+    /* New colors from the prompt */
+    --accent: 251 78% 66%; /* #8b5cf6 - Lavender/Purple */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 224 32% 22%; /* #293548 */
+    --input: 224 32% 22%;
+    --ring: 243 73% 63%; /* Brighter primary for ring */
+
+    --radius: 0.5rem;
+
+    --chart-1: 243 73% 58%;
+    --chart-2: 251 78% 66%;
+    --chart-3: 160 60% 45%;
+    --chart-4: 40 90% 60%;
+    --chart-5: 0 80% 65%;
+    
+    /* Sidebar Variables */
+    --sidebar-background: 224 71% 4%; /* Match main background for seamless look */
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-border: 224 32% 22%;
+    --sidebar-accent: 224 42% 16%; /* Use card color for hover */
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-primary: 243 73% 58%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-ring: 243 73% 63%;
+  }
+
+  .dark {
+    /* Re-declaring for dark mode specificity if needed, but defaults are dark */
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+    --card: 224 42% 16%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 243 73% 58%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 226 43% 31%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 251 78% 66%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 224 32% 22%;
+    --input: 224 32% 22%;
+    --ring: 243 73% 63%;
+
+    /* Sidebar Variables */
+    --sidebar-background: 224 71% 4%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-border: 224 32% 22%;
+    --sidebar-accent: 224 42% 16%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-primary: 243 73% 58%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-ring: 243 73% 63%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .modern-scrollbar {
+    /* For Webkit-based browsers (Chrome, Safari, Edge) */
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--border) / 0.5);
+      border-radius: 10px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+       background-color: hsl(var(--border));
+    }
+  }
+}
+
+/* Custom Styles for Landing Page & Marketplace */
+.glassmorphism-card {
+  @apply bg-slate-800/20 backdrop-blur-xl border border-slate-700/50;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+}
+
+.perspective-card-container {
+    perspective: 1000px;
+}
+
+.perspective-card {
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.perspective-card:hover {
+  transform: rotateY(-10deg) rotateX(5deg) scale(1.05);
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.auth-bg-animated {
+  background: linear-gradient(-45deg, hsl(var(--background)), hsl(var(--card)), hsl(var(--secondary)), hsl(var(--background)));
+  background-size: 400% 400%;
+  animation: gradient-move 15s ease infinite;
+}
+
+/* For the neon button glow */
+.button-neon-glow {
+  @apply bg-transparent border-2 border-accent text-accent shadow-[0_0_10px_hsl(var(--accent)),_inset_0_0_10px_hsl(var(--accent))];
+  transition: all 0.3s ease-in-out;
+}
+.button-neon-glow:hover {
+  @apply shadow-[0_0_20px_hsl(var(--accent)),_inset_0_0_20px_hsl(var(--accent))] text-white bg-accent/20;
+  animation: pulse-neon 1.5s infinite alternate;
+}
+
+@keyframes pulse-neon {
+  from {
+    box-shadow: 0 0 10px hsl(var(--accent)), inset 0 0 10px hsl(var(--accent));
+  }
+  to {
+    box-shadow: 0 0 20px hsl(var(--accent)), inset 0 0 20px hsl(var(--accent));
+  }
+}
+
+/* For the shimmer effect on the headline */
+.text-glow-hover {
+  @apply transition-all duration-300;
+}
+.text-glow-hover:hover {
+   text-shadow: 0 0 15px hsl(var(--primary) / 0.8), 0 0 25px hsl(var(--accent) / 0.6);
+}
