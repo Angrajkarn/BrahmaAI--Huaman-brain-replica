@@ -42,11 +42,11 @@ This project is designed to be a starting point and a source of inspiration for 
 
 | Dashboard View | Chat Interface |
 | :---: | :---: |
-| <img src="pic/dashboard.png" alt="Dashboard Screenshot" data-ai-hint="dashboard analytics" /> | <img src="pic/new chat.png" alt="Chat Screenshot" data-ai-hint="chat interface" /> |
+| <img src="pic/Dashboard.png" alt="Dashboard Screenshot" data-ai-hint="dashboard analytics" /> | <img src="pic/chat.png" alt="Chat Screenshot" data-ai-hint="chat interface" /> |
 
 | Author Dashboard | Marketplace |
 | :---: | :---: |
-| <img src="pic/window.png" alt="Author Dashboard Screenshot" data-ai-hint="author dashboard" /> | <img src="pic/market place.png" alt="Marketplace Screenshot" data-ai-hint="marketplace grid" /> |
+| <img src="pic/main.png" alt="Author Dashboard Screenshot" data-ai-hint="author dashboard" /> | <img src="pic/market.png" alt="Marketplace Screenshot" data-ai-hint="marketplace grid" /> |
 
 
 ## 🚀 Getting Started
